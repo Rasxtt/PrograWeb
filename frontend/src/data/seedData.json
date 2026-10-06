@@ -1,0 +1,714 @@
+{
+  "users": [
+    {
+      "id": "user-camila",
+      "code": "20211842",
+      "email": "camila.quispe@aloe.ulima.edu.pe",
+      "fullName": "Camila Andrade Quispe",
+      "career": "Ingeniería Industrial",
+      "cycle": 8,
+      "role": "student",
+      "isBlocked": false,
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "bio": "Estudiante de 8.° ciclo apasionada por la optimización de procesos, la tecnología aplicada y el debate universitario.",
+      "interests": ["Tecnología", "Académico", "Social"]
+    },
+    {
+      "id": "user-lucia",
+      "code": "20202931",
+      "email": "lucia.mendoza@aloe.ulima.edu.pe",
+      "fullName": "Lucía Mendoza Ríos",
+      "career": "Ingeniería de Sistemas",
+      "cycle": 9,
+      "role": "directive",
+      "isBlocked": false,
+      "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+      "bio": "Presidenta del Club de Robótica Ulima. Investigadora en robótica móvil e interfaces IoT.",
+      "interests": ["Tecnología", "Académico"],
+      "managedClubId": "club-robotica"
+    },
+    {
+      "id": "user-admin",
+      "code": "20100001",
+      "email": "admin@aloe.ulima.edu.pe",
+      "fullName": "Dirección de Bienestar Estudiantil",
+      "career": "Gestión Universitaria",
+      "cycle": 10,
+      "role": "admin",
+      "isBlocked": false,
+      "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+      "bio": "Supervisión institucional, bienestar y gobernanza de agrupaciones y clubes estudiantiles Ulima.",
+      "interests": ["Cultura", "Deportes", "Tecnología", "Social", "Académico", "Arte"]
+    },
+    {
+      "id": "user-diego",
+      "code": "20220914",
+      "email": "diego.silva@aloe.ulima.edu.pe",
+      "fullName": "Diego Alonso Silva",
+      "career": "Comunicación",
+      "cycle": 6,
+      "role": "student",
+      "isBlocked": false,
+      "avatarUrl": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80",
+      "bio": "Audiovisuales, creación de contenido y voluntariado social en comunidades de Lima Metropolitana.",
+      "interests": ["Social", "Arte", "Cultura"]
+    },
+    {
+      "id": "user-sofia",
+      "code": "20231502",
+      "email": "sofia.valdivia@aloe.ulima.edu.pe",
+      "fullName": "Sofía Paz Valdivia",
+      "career": "Derecho",
+      "cycle": 4,
+      "role": "student",
+      "isBlocked": false,
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+      "bio": "Interesada en derecho corporativo, argumentación jurídica y arbitraje internacional.",
+      "interests": ["Académico", "Cultura"]
+    },
+    {
+      "id": "user-carlos",
+      "code": "20193421",
+      "email": "carlos.morales@aloe.ulima.edu.pe",
+      "fullName": "Carlos Eduardo Morales",
+      "career": "Economía",
+      "cycle": 10,
+      "role": "student",
+      "isBlocked": true,
+      "blockReason": "Infracción reiterada a las normas de convivencia en foros estudiantiles (Reglamento Disciplinario Art. 45 - Bienestar Estudiantil).",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "bio": "Cuenta suspendida temporalmente por Bienestar Estudiantil.",
+      "interests": ["Académico"]
+    }
+  ],
+  "clubs": [
+    {
+      "id": "club-robotica",
+      "code": "RB",
+      "name": "Club de Robótica Ulima",
+      "tagline": "Innovación, hardware libre y desarrollo de automatización inteligente",
+      "description": "El Club de Robótica Ulima es una comunidad multidisciplinaria que reúne a estudiantes de diversas carreras con el objetivo de construir prototipos robóticos, competir en torneos nacionales e internacionales de BattleBots y Sumo, y realizar proyectos de impacto en automatización e Internet de las Cosas.",
+      "category": "Tecnología",
+      "mission": "Promover la investigación práctica y el aprendizaje interdisciplinario en robótica, electrónica e inteligencia artificial entre la comunidad de la Universidad de Lima.",
+      "vision": "Ser el club de robótica referente a nivel universitario en el Perú y consolidar delegaciones competitivas en certámenes internacionales de robótica aplicada.",
+      "status": "published",
+      "logoUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200&auto=format&fit=crop&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=1200&auto=format&fit=crop&q=80",
+      "meetingDays": ["Martes", "Jueves"],
+      "meetingTime": "17:00 - 19:30",
+      "meetingLocation": "Edificio V - Laboratorio de Prototipado y FabLab",
+      "contactEmail": "robotica@aloe.ulima.edu.pe",
+      "socialLinks": {
+        "instagram": "https://instagram.com/robotica_ulima",
+        "linkedin": "https://linkedin.com/company/robotica-ulima",
+        "discord": "https://discord.gg/robotica-ulima"
+      },
+      "admissionType": "application",
+      "requirements": [
+        "Ser alumno regular de pregrado matriculado en el ciclo 2026-2",
+        "Disponibilidad horaria mínima de 4 horas semanales para talleres",
+        "Interés demostrado en electrónica, programación o diseño mecánico 3D",
+        "Aprobar la entrevista preliminar con el comité de proyectos"
+      ],
+      "customQuestions": [
+        "¿En qué área de la robótica te gustaría especializarte (Hardware, Software, Diseño 3D o Gestión)?",
+        "¿Tienes experiencia previa con Arduino, Raspberry Pi, Python o C++? Detalla brevemente.",
+        "¿Por qué te entusiasma formar parte del Club de Robótica este semestre?"
+      ],
+      "memberCount": 42,
+      "directiveLeaderId": "user-lucia"
+    },
+    {
+      "id": "club-debate",
+      "code": "DB",
+      "name": "Sociedad de Debate Ulima",
+      "tagline": "El arte de la argumentación, el pensamiento crítico y la oratoria",
+      "description": "Formamos a oradores y pensadores críticos de la Universidad de Lima en el formato de Debate Parlamentario Británico (BP) y World Schools. Participamos en el Campeonato Mundial Universitario de Debate en Español (CMUDE) y torneos interuniversitarios en toda Latinoamérica.",
+      "category": "Académico",
+      "mission": "Empoderar a los estudiantes con habilidades retóricas de rigor, análisis político-económico y escucha activa para liderar los debates de la sociedad peruana.",
+      "vision": "Posicionar a la Ulima en el podio de las mejores sociedades de debate del circuito hispanohablante.",
+      "status": "published",
+      "logoUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=200&auto=format&fit=crop&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200&auto=format&fit=crop&q=80",
+      "meetingDays": ["Lunes", "Miércoles"],
+      "meetingTime": "18:00 - 20:00",
+      "meetingLocation": "Edificio O - Aula Magna 104",
+      "contactEmail": "debate@aloe.ulima.edu.pe",
+      "socialLinks": {
+        "instagram": "https://instagram.com/debate_ulima",
+        "linkedin": "https://linkedin.com/company/debate-ulima"
+      },
+      "admissionType": "open",
+      "requirements": [
+        "Matriculado en pregrado Ulima",
+        "Asistir a al menos dos sesiones introductorias de entrenamiento"
+      ],
+      "customQuestions": [
+        "¿Qué moción o tema de actualidad política o social te gustaría debatir?",
+        "¿Has participado antes en modelos de debate o MUN?"
+      ],
+      "memberCount": 38,
+      "directiveLeaderId": "user-sofia"
+    },
+    {
+      "id": "club-voluntariado",
+      "code": "VL",
+      "name": "Voluntariado Social Huellas Ulima",
+      "tagline": "Compromiso social, desarrollo sostenible y acción solidaria",
+      "description": "Agrupación estudiantil orientada a la ejecución de proyectos de alto impacto social, apoyo educativo a niños en zonas vulnerables y campañas de sostenibilidad ambiental comunitaria en Lima y provincias.",
+      "category": "Social",
+      "mission": "Conectar la sensibilidad social de los alumnos de la Universidad de Lima con las necesidades reales de comunidades del país.",
+      "vision": "Consolidar una red estudiantil de voluntariado con proyectos autosostenibles a largo plazo.",
+      "status": "published",
+      "logoUrl": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=200&auto=format&fit=crop&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&auto=format&fit=crop&q=80",
+      "meetingDays": ["Sábados"],
+      "meetingTime": "09:00 - 13:00",
+      "meetingLocation": "Patio de Encuentros / Salidas a campo",
+      "contactEmail": "huellas@aloe.ulima.edu.pe",
+      "socialLinks": {
+        "instagram": "https://instagram.com/huellas_ulima"
+      },
+      "admissionType": "open",
+      "requirements": [
+        "Disponibilidad para salidas quincenales de fin de semana",
+        "Puntualidad y vocación de servicio"
+      ],
+      "memberCount": 65,
+      "directiveLeaderId": "user-diego"
+    },
+    {
+      "id": "club-teatro",
+      "code": "TU",
+      "name": "Elenco de Teatro Universitario",
+      "tagline": "Expresión escénica, actuación y montaje teatral contemporáneo",
+      "description": "Espacio de formación actoral y producción de puestas en escena para alumnos de todas las carreras. Montamos dos obras mayores por año en el Auditorio ZUM de la Ulima.",
+      "category": "Arte",
+      "mission": "Fomentar la sensibilidad artística y el trabajo escénico colaborativo en el campus.",
+      "vision": "Ser una cantera de talento dramático y creatividad cultural universitaria.",
+      "status": "published",
+      "logoUrl": "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=200&auto=format&fit=crop&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=1200&auto=format&fit=crop&q=80",
+      "meetingDays": ["Viernes", "Sábados"],
+      "meetingTime": "16:00 - 19:00",
+      "meetingLocation": "Sala de Danza y Teatro - Edificio N",
+      "contactEmail": "teatro@aloe.ulima.edu.pe",
+      "socialLinks": {
+        "instagram": "https://instagram.com/teatro_ulima"
+      },
+      "admissionType": "application",
+      "requirements": [
+        "Rendir la prueba de audición teatral",
+        "Compromiso riguroso con los ensayos de temporada"
+      ],
+      "customQuestions": [
+        "¿Tienes experiencia previa en teatro, danza o música?",
+        "¿Qué género dramático prefieres explorar?"
+      ],
+      "memberCount": 24,
+      "directiveLeaderId": "user-camila"
+    },
+    {
+      "id": "club-futsal",
+      "code": "FS",
+      "name": "Club Deportivo de Futsal Ulima",
+      "tagline": "Entrenamiento táctico, alta competencia y compañerismo en cancha",
+      "description": "Entrenamientos semanales y participación en torneos universitarios ADECORE y FEDUP. Fomentamos la disciplina deportiva, el acondicionamiento físico y la estrategia de juego.",
+      "category": "Deportes",
+      "mission": "Desarrollar la excelencia deportiva y el espíritu de equipo a través del futsal.",
+      "vision": "Campeonar en el circuito universitario nacional representando a la Ulima.",
+      "status": "published",
+      "logoUrl": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=200&auto=format&fit=crop&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200&auto=format&fit=crop&q=80",
+      "meetingDays": ["Miércoles", "Viernes"],
+      "meetingTime": "19:00 - 21:00",
+      "meetingLocation": "Complejo Polideportivo - Cancha Techada 1",
+      "contactEmail": "futsal@aloe.ulima.edu.pe",
+      "socialLinks": {
+        "instagram": "https://instagram.com/futsal_ulima"
+      },
+      "admissionType": "limited",
+      "requirements": [
+        "Ficha médica de aptitud física aprobada",
+        "Superar la prueba de destreza técnica con el cuerpo técnico"
+      ],
+      "memberCount": 28,
+      "directiveLeaderId": "user-lucia"
+    },
+    {
+      "id": "club-finanzas",
+      "code": "FIS",
+      "name": "Finance & Investment Society Ulima",
+      "tagline": "Mercado de capitales, valoración de empresas y análisis cuantitativo",
+      "description": "Comunidad de finanzas cuantitativas, renta variable y banca de inversión. Gestionamos portafolios simulados en Bloomberg y organizamos conferencias con gestores de fondos de Wall Street y la BVL.",
+      "category": "Académico",
+      "mission": "Preparar a los futuros líderes financieros de la región con herramientas cuantitativas de vanguardia.",
+      "vision": "Ser el hub financiero estudiantil más prestigioso del cono sur.",
+      "status": "published",
+      "logoUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200&auto=format&fit=crop&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&auto=format&fit=crop&q=80",
+      "meetingDays": ["Martes"],
+      "meetingTime": "18:00 - 20:30",
+      "meetingLocation": "Laboratorio Financiero Bloomberg - Edificio F",
+      "contactEmail": "finance@aloe.ulima.edu.pe",
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/company/fis-ulima"
+      },
+      "admissionType": "application",
+      "requirements": [
+        "Haber cursado o estar cursando cursos de finanzas o economía",
+        "Conocimientos básicos de Excel financiero"
+      ],
+      "memberCount": 45,
+      "directiveLeaderId": "user-camila"
+    },
+    {
+      "id": "club-folklore",
+      "code": "DP",
+      "name": "Agrupación de Folklore y Danzas Peruanas",
+      "tagline": "Tradición, identidad cultural y danzas originarias de la costa, sierra y selva",
+      "description": "Promovemos el rescate y difusión de las danzas tradicionales del Perú a través de ensambles coreográficos, investigaciones de trajes típicos y presentaciones en festividades universitarias.",
+      "category": "Cultura",
+      "mission": "Fortalecer la identidad cultural peruana en la comunidad universitaria.",
+      "vision": "Llevar nuestras expresiones dancísticas a festivales internacionales.",
+      "status": "published",
+      "logoUrl": "https://images.unsplash.com/photo-1547153760-18fc86324498?w=200&auto=format&fit=crop&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&auto=format&fit=crop&q=80",
+      "meetingDays": ["Lunes", "Miércoles"],
+      "meetingTime": "17:30 - 19:30",
+      "meetingLocation": "Sala de Danzas - Edificio N",
+      "contactEmail": "danzas@aloe.ulima.edu.pe",
+      "socialLinks": {
+        "instagram": "https://instagram.com/danzas_ulima"
+      },
+      "admissionType": "open",
+      "requirements": [
+        "Ganas de aprender danzas típicas",
+        "Asistencia regular a los ensayos"
+      ],
+      "memberCount": 50,
+      "directiveLeaderId": "user-diego"
+    },
+    {
+      "id": "club-gamedev",
+      "code": "GD",
+      "name": "Game Dev & eSports Club Ulima",
+      "tagline": "Diseño de videojuegos, modelado 3D, desarrollo en Unity y deportes electrónicos",
+      "description": "Creamos videojuegos desde cero en game jams universitarias y organizamos la liga interna de deportes electrónicos de la Ulima en títulos como League of Legends, Valorant y Rocket League.",
+      "category": "Tecnología",
+      "mission": "Unir a programadores, artistas conceptuales y jugadores para impulsar la industria del videojuego nacional.",
+      "vision": "Publicar títulos comerciales en Steam desarrollados íntegramente por alumnos Ulima.",
+      "status": "under_review",
+      "logoUrl": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=200&auto=format&fit=crop&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&auto=format&fit=crop&q=80",
+      "meetingDays": ["Viernes"],
+      "meetingTime": "16:00 - 19:00",
+      "meetingLocation": "Laboratorio de Computación Gráfica - Edificio V",
+      "contactEmail": "gamedev@aloe.ulima.edu.pe",
+      "socialLinks": {
+        "discord": "https://discord.gg/ulima-gamedev"
+      },
+      "admissionType": "open",
+      "requirements": [
+        "Interés en videojuegos, arte 3D o programación C#"
+      ],
+      "memberCount": 35,
+      "directiveLeaderId": "user-lucia"
+    }
+  ],
+  "memberships": [
+    {
+      "id": "mem-1",
+      "clubId": "club-debate",
+      "userId": "user-camila",
+      "roleInClub": "Miembro Activo",
+      "status": "accepted",
+      "appliedAt": "2026-08-15T10:00:00Z",
+      "reviewedAt": "2026-08-16T14:20:00Z"
+    },
+    {
+      "id": "mem-2",
+      "clubId": "club-robotica",
+      "userId": "user-camila",
+      "roleInClub": "Miembro Activo",
+      "status": "pending",
+      "appliedAt": "2026-09-02T16:45:00Z",
+      "answers": {
+        "¿En qué área de la robótica te gustaría especializarte (Hardware, Software, Diseño 3D o Gestión)?": "Diseño y modelado 3D de piezas estructurales.",
+        "¿Tienes experiencia previa con Arduino, Raspberry Pi, Python o C++? Detalla brevemente.": "Básica en Python para automatización en cursos de ingeniería.",
+        "¿Por qué te entusiasma formar parte del Club de Robótica este semestre?": "Quiero aplicar mis conocimientos de optimización de planta en proyectos de robótica colaborativa."
+      }
+    },
+    {
+      "id": "mem-3",
+      "clubId": "club-robotica",
+      "userId": "user-lucia",
+      "roleInClub": "Presidente",
+      "status": "accepted",
+      "appliedAt": "2025-03-01T09:00:00Z",
+      "reviewedAt": "2025-03-02T11:00:00Z"
+    },
+    {
+      "id": "mem-4",
+      "clubId": "club-voluntariado",
+      "userId": "user-diego",
+      "roleInClub": "Presidente",
+      "status": "accepted",
+      "appliedAt": "2025-08-10T12:00:00Z",
+      "reviewedAt": "2025-08-11T10:00:00Z"
+    },
+    {
+      "id": "mem-5",
+      "clubId": "club-debate",
+      "userId": "user-sofia",
+      "roleInClub": "Presidente",
+      "status": "accepted",
+      "appliedAt": "2025-08-10T12:00:00Z",
+      "reviewedAt": "2025-08-11T10:00:00Z"
+    },
+    {
+      "id": "mem-6",
+      "clubId": "club-robotica",
+      "userId": "user-diego",
+      "roleInClub": "Miembro Activo",
+      "status": "accepted",
+      "appliedAt": "2026-08-20T11:30:00Z",
+      "reviewedAt": "2026-08-22T09:15:00Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "act-1",
+      "clubId": "club-robotica",
+      "title": "Taller Práctico: Construcción de Robots Sumo Autónomos",
+      "description": "Taller intensivo en el FabLab donde aprenderás a ensamblar sensores ultrasónicos, puentes H para motores DC y calibrar la lógica de combate de un robot mini-sumo en plataforma Arduino.",
+      "category": "Tecnología",
+      "date": "2026-10-15",
+      "startTime": "17:00",
+      "endTime": "19:30",
+      "location": "Edificio V - FabLab Ulima (Laboratorio 302)",
+      "modality": "Presencial",
+      "capacity": 20,
+      "enrolledCount": 18,
+      "status": "scheduled",
+      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+      "tags": ["Arduino", "Hardware", "Competencia"]
+    },
+    {
+      "id": "act-2",
+      "clubId": "club-robotica",
+      "title": "Hackathon de Inteligencia Artificial y Robótica 2026",
+      "description": "Desafío de 24 horas continuas de innovación donde equipos multidisciplinarios diseñarán soluciones autónomas para la logística de almacenes y ciudades inteligentes. Premios y mentorías de empresas del sector tech.",
+      "category": "Tecnología",
+      "date": "2026-10-24",
+      "startTime": "09:00",
+      "endTime": "18:00",
+      "location": "Auditorio ZUM - Pabellón Central",
+      "modality": "Híbrida",
+      "capacity": 30,
+      "enrolledCount": 30,
+      "status": "scheduled",
+      "imageUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&auto=format&fit=crop&q=80",
+      "tags": ["Hackathon", "IA", "Desafío"]
+    },
+    {
+      "id": "act-3",
+      "clubId": "club-debate",
+      "title": "Torneo Interfacultades de Debate: Edición Primavera",
+      "description": "Competencia de debate bajo la modalidad Parlamento Británico. Rondas clasificatorias durante dos días con temáticas sorpresa de geopolítica, bioética y regulación de inteligencia artificial.",
+      "category": "Académico",
+      "date": "2026-10-18",
+      "startTime": "16:00",
+      "endTime": "20:00",
+      "location": "Edificio O - Aulas Magna 1 y 2",
+      "modality": "Presencial",
+      "capacity": 40,
+      "enrolledCount": 26,
+      "status": "scheduled",
+      "imageUrl": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&auto=format&fit=crop&q=80",
+      "tags": ["Debate", "Oratoria", "Premios"]
+    },
+    {
+      "id": "act-4",
+      "clubId": "club-voluntariado",
+      "title": "Jornada de Reforestación y Biohuerto Comunitario",
+      "description": "Salida de campo para sembrar árboles autóctonos y habilitar biohuertos en colegios de Villa María del Triunfo. Se incluye traslado en bus institucional y almuerzo.",
+      "category": "Social",
+      "date": "2026-10-21",
+      "startTime": "08:00",
+      "endTime": "14:00",
+      "location": "Punto de encuentro: Puerta 1 Ulima (Buses)",
+      "modality": "Presencial",
+      "capacity": 35,
+      "enrolledCount": 31,
+      "status": "scheduled",
+      "imageUrl": "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&auto=format&fit=crop&q=80",
+      "tags": ["Sostenibilidad", "Comunidad"]
+    },
+    {
+      "id": "act-5",
+      "clubId": "club-finanzas",
+      "title": "Masterclass: Modelación Financiera con Python y Bloomberg",
+      "description": "Aprende a conectar la API de Terminal Bloomberg con librerías de Python (Pandas, NumPy) para calcular Valor en Riesgo (VaR) y optimización de frontera eficiente de Markowitz.",
+      "category": "Académico",
+      "date": "2026-10-27",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "location": "Aula Virtual Teams (Enlace a inscritos)",
+      "modality": "Virtual",
+      "capacity": 80,
+      "enrolledCount": 62,
+      "status": "scheduled",
+      "imageUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80",
+      "tags": ["Finanzas", "Python", "Trading"]
+    },
+    {
+      "id": "act-6",
+      "clubId": "club-futsal",
+      "title": "Copa Relámpago Interclubes Ulima 2026",
+      "description": "Torneo relámpago mixto entre agrupaciones estudiantiles. Jornada deportiva de integración con hidratación y medallas para los campeones.",
+      "category": "Deportes",
+      "date": "2026-11-05",
+      "startTime": "14:00",
+      "endTime": "18:00",
+      "location": "Canchas Polideportivo Ulima",
+      "modality": "Presencial",
+      "capacity": 48,
+      "enrolledCount": 40,
+      "status": "scheduled",
+      "imageUrl": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&auto=format&fit=crop&q=80",
+      "tags": ["Futsal", "Torneo", "Integración"]
+    },
+    {
+      "id": "act-7",
+      "clubId": "club-teatro",
+      "title": "Audiciones Generales para la Temporada Teatral 2026-2",
+      "description": "Convocatoria abierta para actores, actrices y técnicos de iluminación/sonido para la adaptación de la comedia 'El Burgués Gentilhombre'. No se requiere experiencia previa.",
+      "category": "Arte",
+      "date": "2026-10-12",
+      "startTime": "15:00",
+      "endTime": "18:30",
+      "location": "Sala de Teatro - Pabellón N (Sótano)",
+      "modality": "Presencial",
+      "capacity": 30,
+      "enrolledCount": 19,
+      "status": "scheduled",
+      "imageUrl": "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80",
+      "tags": ["Teatro", "Audición", "Arte"]
+    },
+    {
+      "id": "act-8",
+      "clubId": "club-robotica",
+      "title": "Seminario Inaugural: Introducción a ROS 2 y Drones Autónomos",
+      "description": "Charla magistral dictada por egresados investigadores sobre navegación y SLAM en robots móviles y drones.",
+      "category": "Tecnología",
+      "date": "2026-09-10",
+      "startTime": "17:00",
+      "endTime": "19:00",
+      "location": "Auditorio ZUM",
+      "modality": "Presencial",
+      "capacity": 60,
+      "enrolledCount": 58,
+      "status": "completed",
+      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+      "tags": ["Conferencia", "Drones"]
+    }
+  ],
+  "registrations": [
+    {
+      "id": "reg-1",
+      "activityId": "act-1",
+      "userId": "user-camila",
+      "userName": "Camila Andrade Quispe",
+      "userEmail": "camila.quispe@aloe.ulima.edu.pe",
+      "userCode": "20211842",
+      "userCareer": "Ingeniería Industrial",
+      "status": "confirmed",
+      "registeredAt": "2026-09-28T14:30:00Z",
+      "attendanceStatus": "present",
+      "ticketCode": "ULIMA-ROB-8841"
+    },
+    {
+      "id": "reg-2",
+      "activityId": "act-3",
+      "userId": "user-camila",
+      "userName": "Camila Andrade Quispe",
+      "userEmail": "camila.quispe@aloe.ulima.edu.pe",
+      "userCode": "20211842",
+      "userCareer": "Ingeniería Industrial",
+      "status": "confirmed",
+      "registeredAt": "2026-09-29T10:15:00Z",
+      "ticketCode": "ULIMA-DEB-1903"
+    },
+    {
+      "id": "reg-3",
+      "activityId": "act-8",
+      "userId": "user-camila",
+      "userName": "Camila Andrade Quispe",
+      "userEmail": "camila.quispe@aloe.ulima.edu.pe",
+      "userCode": "20211842",
+      "userCareer": "Ingeniería Industrial",
+      "status": "confirmed",
+      "registeredAt": "2026-09-05T09:00:00Z",
+      "attendanceStatus": "present",
+      "ticketCode": "ULIMA-ROB-1002"
+    },
+    {
+      "id": "reg-4",
+      "activityId": "act-2",
+      "userId": "user-diego",
+      "userName": "Diego Alonso Silva",
+      "userEmail": "diego.silva@aloe.ulima.edu.pe",
+      "userCode": "20220914",
+      "userCareer": "Comunicación",
+      "status": "waitlist",
+      "registeredAt": "2026-10-01T11:20:00Z",
+      "ticketCode": "WAIT-ROB-001"
+    },
+    {
+      "id": "reg-5",
+      "activityId": "act-2",
+      "userId": "user-sofia",
+      "userName": "Sofía Paz Valdivia",
+      "userEmail": "sofia.valdivia@aloe.ulima.edu.pe",
+      "userCode": "20231502",
+      "userCareer": "Derecho",
+      "status": "waitlist",
+      "registeredAt": "2026-10-01T12:05:00Z",
+      "ticketCode": "WAIT-ROB-002"
+    },
+    {
+      "id": "reg-6",
+      "activityId": "act-1",
+      "userId": "user-diego",
+      "userName": "Diego Alonso Silva",
+      "userEmail": "diego.silva@aloe.ulima.edu.pe",
+      "userCode": "20220914",
+      "userCareer": "Comunicación",
+      "status": "confirmed",
+      "registeredAt": "2026-09-29T15:00:00Z",
+      "attendanceStatus": "absent",
+      "ticketCode": "ULIMA-ROB-8842"
+    }
+  ],
+  "boardPosts": [
+    {
+      "id": "post-1",
+      "clubId": "club-robotica",
+      "authorId": "user-lucia",
+      "authorName": "Lucía Mendoza Ríos",
+      "authorRole": "Presidenta de Club",
+      "title": "📌 Comunicado Oficial: Cronograma de uso de Laboratorios y Kits de Robótica 2026-2",
+      "content": "Estimados miembros del Club de Robótica: Les recordamos que los horarios reservados para nuestro uso del FabLab son los días martes y jueves a partir de las 17:00 hrs. Por favor soliciten las tarjetas de acceso y kits de componentes en la ventanilla de soporte con 15 minutos de anticipación. ¡Este ciclo tenemos la meta de construir 4 robots para la competencia nacional!",
+      "createdAt": "2026-09-25T11:00:00Z",
+      "isPinned": true,
+      "likesCount": 14,
+      "likedBy": ["user-camila", "user-diego", "user-sofia"]
+    },
+    {
+      "id": "post-2",
+      "clubId": "club-robotica",
+      "authorId": "user-lucia",
+      "authorName": "Lucía Mendoza Ríos",
+      "authorRole": "Presidenta de Club",
+      "title": "Convocatoria abierta para el equipo de diseño mecánico (Fusion 360 / SolidWorks)",
+      "content": "Estamos buscando 2 estudiantes entusiastas que deseen liderar el diseño del chasis de los robots para el torneo de fin de semestre. Quienes estén interesados pueden comentar aquí o enviar mensaje por el grupo oficial de Discord.",
+      "createdAt": "2026-10-02T16:40:00Z",
+      "isPinned": false,
+      "likesCount": 8,
+      "likedBy": ["user-camila"]
+    },
+    {
+      "id": "post-3",
+      "clubId": "club-debate",
+      "authorId": "user-sofia",
+      "authorName": "Sofía Paz Valdivia",
+      "authorRole": "Presidenta de Club",
+      "title": "📌 Lecturas preparatorias para el Torneo Interfacultades",
+      "content": "Adjuntamos la guía de jurisprudencia y economía conductual para los oradores inscritos en el torneo de este mes. Revisar el caso de estudio número 3.",
+      "createdAt": "2026-09-28T09:15:00Z",
+      "isPinned": true,
+      "likesCount": 11,
+      "likedBy": ["user-camila"]
+    }
+  ],
+  "postComments": [
+    {
+      "id": "com-1",
+      "postId": "post-1",
+      "authorId": "user-camila",
+      "authorName": "Camila Andrade Quispe",
+      "authorAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "content": "Excelente iniciativa Lucía. ¿Habrá capacitaciones para quienes no manejan aún las impresoras 3D de resina?",
+      "createdAt": "2026-09-25T12:30:00Z"
+    },
+    {
+      "id": "com-2",
+      "postId": "post-1",
+      "authorId": "user-lucia",
+      "authorName": "Lucía Mendoza Ríos",
+      "authorAvatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+      "content": "¡Sí, Camila! En la sesión del jueves 15 dedicaremos los primeros 45 minutos a calibración y software slicer.",
+      "createdAt": "2026-09-25T13:10:00Z"
+    },
+    {
+      "id": "com-3",
+      "postId": "post-2",
+      "authorId": "user-camila",
+      "authorName": "Camila Andrade Quispe",
+      "authorAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "content": "¡Me interesa postular para esa área! Acabo de completar el curso de modelado por computadora.",
+      "createdAt": "2026-10-02T17:05:00Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "userId": "user-camila",
+      "title": "Solicitud en proceso",
+      "message": "Tu solicitud de admisión al Club de Robótica Ulima ha sido recibida y está siendo evaluada por la directiva.",
+      "type": "info",
+      "isRead": false,
+      "createdAt": "2026-09-02T16:46:00Z",
+      "link": "/mis-clubes"
+    },
+    {
+      "id": "notif-2",
+      "userId": "user-camila",
+      "title": "Inscripción confirmada",
+      "message": "Tienes tu cupo asegurado para el 'Taller Práctico: Construcción de Robots Sumo Autónomos'. Código de pase: ULIMA-ROB-8841.",
+      "type": "success",
+      "isRead": false,
+      "createdAt": "2026-09-28T14:31:00Z",
+      "link": "/mis-inscripciones"
+    },
+    {
+      "id": "notif-3",
+      "userId": "user-camila",
+      "title": "Nuevo comunicado en Debate",
+      "message": "Sociedad de Debate Ulima publicó 'Lecturas preparatorias para el Torneo Interfacultades'.",
+      "type": "info",
+      "isRead": true,
+      "createdAt": "2026-09-28T09:16:00Z",
+      "link": "/clubes/club-debate"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "audit-1",
+      "adminEmail": "admin@aloe.ulima.edu.pe",
+      "action": "Aprobación de Club",
+      "target": "Finance & Investment Society Ulima",
+      "timestamp": "2026-08-10T10:00:00Z",
+      "reason": "Cumplimiento total de estatutos de agrupaciones estudiantiles."
+    },
+    {
+      "id": "audit-2",
+      "adminEmail": "admin@aloe.ulima.edu.pe",
+      "action": "Suspensión de Usuario",
+      "target": "carlos.morales@aloe.ulima.edu.pe",
+      "timestamp": "2026-09-12T15:30:00Z",
+      "reason": "Infracción reiterada a las normas de convivencia en foros estudiantiles (Art. 45)."
+    }
+  ]
+}

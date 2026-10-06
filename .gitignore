@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Production build outputs
+dist/
+frontend/dist/
+backend/dist/
+
+# Logs and environment
+*.log
+.DS_Store
+
+# Scratch files
+scratch/

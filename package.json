@@ -1,0 +1,15 @@
+{
+  "name": "pw-2026-2-tema9-clubes-y-actividades",
+  "version": "1.0.0",
+  "description": "Vida Universitaria - Clubes y Actividades Estudiantiles (Universidad de Lima - Tema 9)",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build && npm --prefix backend run build",
+    "preview": "npm --prefix frontend run preview",
+    "start": "npm --prefix frontend run preview",
+    "backend": "npm --prefix backend run dev"
+  },
+  "keywords": ["ulima", "vida-universitaria", "clubes", "react", "typescript", "express"],
+  "author": "Universidad de Lima",
+  "license": "ISC"
+}
