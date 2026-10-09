@@ -1,0 +1,24 @@
+/* src/entries/web.css */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import 'react-toastify/dist/ReactToastify.css';
+@import '../styles/tokens.css';
+@import '../styles/global.css';
+
+/* Override bootstrap primary with our brand color */
+:root {
+  --bs-primary: #6B2FA8;
+  --bs-primary-rgb: 107, 47, 168;
+}
+
+.text-primary-custom {
+  color: var(--primary) !important;
+}
+
+.bg-primary-custom {
+  background-color: var(--primary) !important;
+}
+
+.bg-primary-soft {
+  background-color: var(--primary-soft) !important;
+}

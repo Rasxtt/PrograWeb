@@ -1,0 +1,287 @@
+/* Global styles and Bootstrap enhancements for Vida Universitaria */
+@import './tokens.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .heading-font {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Custom Primary & Secondary Buttons */
+.btn-primary-custom {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  border-radius: var(--radius-btn);
+  padding: 8px 18px;
+  transition: all 0.2s ease-in-out;
+}
+.btn-primary-custom:hover, .btn-primary-custom:focus {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #FFFFFF !important;
+}
+
+.btn-outline-primary-custom {
+  background-color: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary) !important;
+  font-weight: 600;
+  border-radius: var(--radius-btn);
+  padding: 8px 18px;
+  transition: all 0.2s ease-in-out;
+}
+.btn-outline-primary-custom:hover {
+  background-color: var(--primary-soft);
+  color: var(--primary-dark) !important;
+}
+
+.btn-pill {
+  border-radius: var(--radius-pill) !important;
+}
+
+/* Card Styling */
+.card-custom {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card-custom:hover {
+  box-shadow: 0 4px 16px rgba(30, 23, 40, 0.12);
+}
+
+/* Diagonal Stripe Banner Pattern (as seen in mockups) */
+.diagonal-pattern-banner {
+  height: 120px;
+  background-color: #F6F3FB;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(107, 47, 168, 0.05),
+    rgba(107, 47, 168, 0.05) 12px,
+    rgba(107, 47, 168, 0.01) 12px,
+    rgba(107, 47, 168, 0.01) 24px
+  );
+  position: relative;
+}
+
+/* Inputs & Form controls */
+.form-control-custom, .form-select-custom {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-input);
+  padding: 10px 14px;
+  font-size: 15px;
+  color: var(--text);
+  background-color: #FFFFFF;
+}
+.form-control-custom:focus, .form-select-custom:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(107, 47, 168, 0.15);
+  outline: none;
+}
+
+/* Custom badges */
+.badge-category {
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.badge-status {
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Calendar Date Badge (e.g. SEP 18 18:00) */
+.calendar-badge {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-radius: 10px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+.calendar-badge .month {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.calendar-badge .day {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
+.calendar-badge .time {
+  font-size: 9px;
+  opacity: 0.9;
+}
+
+/* Club Initials Round Icon */
+.club-avatar-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(30, 23, 40, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--primary);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Breadcrumbs */
+.breadcrumb-custom {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.breadcrumb-custom a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.breadcrumb-custom a:hover {
+  color: var(--primary);
+}
+
+/* Progress bar for cupos */
+.progress-cupo {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #EAE6F0;
+  overflow: hidden;
+}
+.progress-cupo .progress-bar {
+  background-color: var(--primary);
+}
+.progress-cupo .progress-bar.full {
+  background-color: var(--accent);
+}
+
+/* Dashed prompt container */
+.prompt-box-dashed {
+  border: 1.5px dashed #C3A6E4;
+  background-color: #FCFAFF;
+  border-radius: var(--radius-card);
+  padding: 24px;
+}
+
+/* Role Switcher Pill (Estudiante | Directiva) */
+.role-pill-switch {
+  display: inline-flex;
+  background-color: #F0EBF7;
+  border-radius: var(--radius-pill);
+  padding: 3px;
+  border: 1px solid var(--border);
+}
+.role-pill-switch button {
+  border: none;
+  background: transparent;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-muted);
+}
+.role-pill-switch button.active-student {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+.role-pill-switch button.active-directive {
+  background-color: #C2681C;
+  color: #FFFFFF;
+}
+
+/* Modal styling */
+.modal-backdrop-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 23, 40, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.modal-card-custom {
+  background: #FFFFFF;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-modal);
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  animation: modalFadeIn 0.2s ease-out;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Directiva Context Bar */
+.context-bar {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+  min-height: 56px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.context-tab {
+  padding: 16px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.context-tab:hover {
+  color: var(--primary);
+}
+.context-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}

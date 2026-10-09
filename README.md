@@ -1,149 +1,182 @@
-# Vida Universitaria - Clubes y Actividades Estudiantiles
-### Universidad de Lima — Programación Web (2026-2) — Tema 9
+# Tema 9: Vida Universitaria - Clubes y Actividades Estudiantiles
 
-Plataforma web integral desarrollada para la centralización, descubrimiento, gestión y gobernanza de agrupaciones estudiantiles y actividades extracurriculares de la **Universidad de Lima**, bajo supervisión de la **Dirección de Bienestar Estudiantil**.
+**Universidad de Lima**  
+**Facultad de Ingeniería y Arquitectura | Carrera de Ingeniería de Sistemas**  
+**Asignatura:** Programación Web (2026-2)
 
 ---
 
-## 1. Personas de Prueba y Credenciales de Evaluación
+## 📌 Descripción del Proyecto
 
-Para facilitar la calificación docente, la plataforma incluye un **Selector Rápido de Perfiles (Role Switcher)** flotante en la esquina inferior izquierda, además de credenciales institucionales precargadas:
+**Vida Universitaria** es una plataforma web integral diseñada para la comunidad estudiantil de la Universidad de Lima. Su objetivo principal es facilitar el descubrimiento, postulación, gestión y participación en clubes estudiantiles, talleres extracurriculares y eventos de la vida universitaria.
 
-| Rol | Nombre Completo | Correo Institucional | Perfil y Permisos |
+El proyecto está construido sobre la arquitectura de la plantilla oficial de la cátedra, implementando una arquitectura **Full-Stack Modular** con **Node.js + Express 5** en el backend y **React 18 + Vite 5 + Bootstrap 5.3 + FontAwesome** en el frontend, con compilación multi-perfil (Multi-Entry Points).
+
+---
+
+## 🚀 Arquitectura y Tecnologías
+
+### Stack Tecnológico
+- **Frontend:** React 18, React Router v7, Bootstrap 5.3, FontAwesome (v6/v7 Free), Vite 5.
+- **Backend:** Node.js, Express 5, EJS Layouts (`ejs-mate`), Express Session (`session-file-store`), Morgan.
+- **Base de Datos / Persistencia:** Repositorios desacoplados con soporte para memoria/mock y PostgreSQL / Supabase vía Sequelize / pg.
+- **Compilación Frontend:** Vite con arquitectura multi-entry, generando bundles independientes y optimizados para cada rol de usuario.
+
+### Arquitectura Multi-Entry (Vite)
+Cada perfil de usuario cuenta con su propio punto de entrada compilado para garantizar independencia, aislamiento de dependencias y tiempos de carga óptimos:
+
+| Perfil | Entrada Vite | Salida Generada | Descripción |
 |---|---|---|---|
-| **Visitante** | *Público / Anónimo* | — | Explora landing, directorio de clubes, cartelera pública y eventos sin iniciar sesión. |
-| **Estudiante** | **Camila Andrade Quispe** | `camila.quispe@aloe.ulima.edu.pe` | Alumna regular (Ing. Industrial, 8.° ciclo, Cód. 20211842). Miembro de Debate, postulante a Robótica, inscrita con ticket digital. |
-| **Directiva** | **Lucía Mendoza Ríos** | `lucia.mendoza@aloe.ulima.edu.pe` | Presidenta de **Club de Robótica Ulima**. Posee barra de contexto, edición de club, bandeja de postulaciones, creador de actividades, control de asistencia y moderación de tablón. |
-| **Administrador** | **Bienestar Estudiantil** | `admin@aloe.ulima.edu.pe` | Encabezado institucional oscuro (`#1E1728`). Tablero de KPIs, aprobación y suspensión de clubes, bloqueo temporal de estudiantes y reportes ejecutivos. |
-| **Sancionado** | **Carlos Eduardo Morales** | `carlos.morales@aloe.ulima.edu.pe` | Cuenta con sanción disciplinaria activa (Art. 45 - Bienestar Estudiantil) para demostración de estados bloqueados. |
-
-> **Nota:** Puedes hacer clic en el botón circular de reinicio en el widget flotante para **restablecer todos los datos al catálogo inicial de prueba** en cualquier momento.
+| **Público / Visitante** | `src/entries/web.jsx` | `public/dist/js/web.js` | Catálogo de clubes, cartelera de actividades, detalle de clubes/eventos, login y registro. |
+| **Estudiante** | `src/entries/student.jsx` | `public/dist/js/student.js` | Portal del estudiante: Mis clubes, mis actividades, solicitudes enviadas y perfil. |
+| **Directiva de Club** | `src/entries/directive.jsx` | `public/dist/js/directive.js` | Panel de directiva: Aprobación de miembros, gestión de eventos y control de asistencia. |
+| **Administrador** | `src/entries/admin.jsx` | `public/dist/js/admin.js` | Panel administrativo central: Auditoría de clubes, solicitudes de creación, usuarios y reportes. |
+| **Estilos Globales** | `src/styles/` | `public/dist/css/web.css` | Sistema de tokens de diseño, tipografía Ulima y Bootstrap unificado. |
 
 ---
 
-## 2. Matriz de Cumplimiento de Historias de Usuario
+## 📂 Estructura del Proyecto
 
-| Historia | Descripción Funcional | Estado | Componentes / Vistas Implementadas |
-|---|---|:---:|---|
-| **HU-1: Cuenta y Acceso** | Registro validado `@aloe.ulima.edu.pe`, login, perfil de estudiante, cambio de rol Estudiante/Directiva, estados 403, 404 y cuenta bloqueada. | **100%** | `LandingPage`, `LoginPage`, `RegisterPage`, `ProfilePage`, `RoleSwitcher`, `ForbiddenPage`, `NotFoundPage`. |
-| **HU-2: Perfil del Club** | Gestión de club por directiva (información, misión, visión, logotipo, banner, requisitos) y ficha pública interactiva con pestañas. | **100%** | `ClubDetailPage`, `ClubProfileEditPage`, `ClubImagesEditPage`, `ClubAdmissionEditPage`. |
-| **HU-3: Directorio y Membresías** | Buscador en tiempo real, filtros múltiples por categoría, convocatoria y días; formulario de postulación con preguntas dinámicas; bandeja de solicitudes y directorio de miembros. | **100%** | `ClubDirectoryPage`, `MembershipModal`, `ClubRequestsPage`, `ClubMembersPage`, `MyClubsPage`. |
-| **HU-4: Actividades del Club** | Creación y edición de eventos por directiva con cupos, modalidad y fecha; cartelera general con filtros de categoría y modalidad. | **100%** | `BillboardPage`, `ActivityDetailPage`, `ClubActivitiesManagePage`. |
-| **HU-5: Inscripciones y Asistencia** | Inscripción con control de aforo, pase digital con código de ticket, lista de espera con reasignación automática, registro de asistencia y **exportación a CSV**. | **100%** | `MyRegistrationsPage`, `ActivityDetailPage`, `AttendancePage`. |
-| **HU-6: Tablón del Club** | Comunicados oficiales con badge "Fijado", hilo de comentarios entre miembros y herramientas de moderación y eliminación por directiva. | **100%** | `ClubDetailPage` (Pestaña Tablón), `ClubBoardManagePage`. |
-| **HU-7: Métricas y Administración** | Tablero de control de Bienestar Estudiantil con KPIs, distribución por categorías, supervisión de clubes (aprobar/suspender), bloqueo de usuarios y descarga de reportes CSV. | **100%** | `AdminDashboardPage`, `AdminClubsPage`, `AdminUsersPage`, `AdminReportsPage`, `RegisterClubPage`. |
-
----
-
-## 3. Tokens de Diseño y Fidelidad Visual
-
-El proyecto reproduce con exactitud las especificaciones visuales de los mockups (`Tema9_Mockups_f.pdf`):
-- **Colores de Marca**:
-  - Primario Ulima: `#6B2FA8` | Primario Oscuro: `#4F2280` | Soft: `#F0E9F9`
-  - Acento: `#17A2A2` | Fondo General: `#FBFAFD` | Superficie: `#FFFFFF` | Bordes: `#E6E1EE`
-  - Texto Principal: `#1E1728` | Texto Secundario: `#6E6580`
-  - Estados: Éxito `#1E7F4D`, Advertencia `#B7791F`, Peligro `#B4322B`, Info `#3B6FA8`
-- **Categorías de Clubes**:
-  - Tecnología: `#2563A8` | Académico: `#5A3FA0` | Social: `#C2681C`
-  - Arte: `#A63BA6` | Deportes: `#1F7A4D` | Cultura: `#B5305F`
-- **Tipografía Oficial Google Fonts**:
-  - Títulos y encabezados: `Outfit` (pesos 600, 700, 800)
-  - Cuerpo de texto y controles: `Inter` (pesos 400, 500, 600)
-- **Geometría**:
-  - Tarjetas y paneles: `border-radius: 14px`
-  - Inputs y botones: `border-radius: 10px`
-  - Badges y switchers: `border-radius: 999px`
-- **Cabeceras por Rol**:
-  - Visitante: Header público con botones de registro e inicio de sesión.
-  - Estudiante: Header con campanita de notificaciones dinámicas y avatar `[CQ]`.
-  - Directiva: Header con switcher de rol `[Estudiante | Directiva]` y barra de contexto (`ContextBar`) del club.
-  - Administrador: Header oscuro en tono `#1E1728` con identificación de Bienestar Estudiantil.
-
----
-
-## 4. Estructura del Proyecto
-
-```
-codespaces-blank/
-├── frontend/                          # Aplicación React + TypeScript + Vite
-│   ├── public/                        # Favicon e íconos institucionales
-│   ├── src/
-│   │   ├── components/                # Componentes modulares y reutilizables
-│   │   │   ├── clubs/                 # MembershipModal y utilidades de clubes
-│   │   │   ├── common/                # RoleSwitcher interactivo
-│   │   │   └── layout/                # Header (dinámico por rol), ContextBar, Footer
-│   │   ├── context/                   # AuthContext y ToastContext
-│   │   ├── data/                      # seedData.json (Catálogo inicial de prueba)
-│   │   ├── pages/
-│   │   │   ├── activities/            # BillboardPage, ActivityDetailPage
-│   │   │   ├── admin/                 # AdminDashboard, AdminClubs, AdminUsers, AdminReports
-│   │   │   ├── clubs/                 # ClubDirectoryPage, ClubDetailPage
-│   │   │   ├── directive/             # Gestión de perfil, imágenes, admisión, solicitudes, miembros, actividades, asistencia y tablón
-│   │   │   ├── public/                # Landing, Login, Registro de Alumno, Registro de Club, 403, 404
-│   │   │   └── student/               # Mi Perfil, Mis Clubes, Mis Inscripciones
-│   │   ├── services/                  # storageService.ts (Persistencia reactiva con fallback)
-│   │   ├── styles/                    # tokens.css y global.css
-│   │   ├── types/                     # Interfaces TypeScript estrictas
-│   │   ├── App.tsx                    # Enrutador principal y guards de navegación
-│   │   └── main.tsx                   # Punto de entrada
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.ts
-├── backend/                           # Servidor Express REST API (Entrega Final)
-│   ├── src/
-│   │   └── server.ts                  # Endpoints REST para clubes, actividades, usuarios y CSV
-│   ├── package.json
-│   └── tsconfig.json
-├── package.json                       # Scripts unificados
-└── README.md
+```plaintext
+├── admin/                     # Módulo del panel de administración
+│   ├── configs/routes.js      # Rutas del panel administrativo (/admin/*)
+│   └── controllers/           # Controladores del módulo de administración
+├── api/                       # Punto de entrada de funciones serverless (Vercel)
+│   └── index.js
+├── configs/                   # Configuraciones globales del servidor Express
+│   ├── bootstrap.js           # Inicialización de rutas, middlewares y sesiones
+│   ├── database.js            # Conexión a base de datos
+│   ├── helpers.js             # Helpers y utilidades del servidor
+│   └── middlewares.js         # Middlewares de autenticación y autorización por rol
+├── db/                        # Migraciones y esquema SQL
+│   ├── migrations/
+│   └── schema.sql
+├── directive/                 # Módulo del panel de directiva de clubes
+│   ├── controllers.js         # Lógica de miembros, solicitudes, eventos y asistencia
+│   └── routes.js              # Rutas de directiva (/directiva/*)
+├── docs/                      # Diagramas de base de datos y documentación técnica
+├── public/                    # Archivos estáticos y distribución compilada
+│   ├── assets/                # Imágenes y recursos estáticos
+│   └── dist/                  # Bundles JS/CSS generados por Vite
+├── src/                       # Aplicación React (SPA / Componentes)
+│   ├── components/            # Componentes reutilizables (Navbar, Cards, Modales, Filtros)
+│   ├── context/               # AuthContext y ToastContext
+│   ├── data/seedData.js       # Repositorio de datos iniciales sembrados
+│   ├── entries/               # Puntos de entrada Vite (web, student, directive, admin)
+│   ├── pages/                 # Páginas organizadas por módulo (public, student, directive, admin)
+│   ├── services/              # Servicio de almacenamiento y lógica de negocio reactiva
+│   └── styles/                # CSS, tokens y temas
+├── student/                   # Módulo del portal de estudiantes
+│   ├── controllers.js         # Lógica de mis clubes, mis actividades y perfil
+│   └── routes.js              # Rutas de estudiante (/estudiante/*)
+├── views/                     # Vistas y plantillas EJS
+│   ├── admin/                 # Vistas del módulo admin
+│   ├── directive/             # Vistas del módulo de directiva
+│   ├── layouts/               # Layouts base (default, student, directive, admin)
+│   ├── student/               # Vistas del módulo de estudiante
+│   └── website/               # Vistas del sitio público
+├── website/                   # Módulo del sitio web público
+│   ├── apis.js                # API REST para el sitio público (/api/*)
+│   ├── controllers.js         # Controladores de páginas públicas
+│   ├── models.js              # Modelos de datos del dominio
+│   ├── repositories.js        # Repositorios de acceso a datos
+│   ├── routes.js              # Enrutador principal de la web (/ y /api/*)
+│   └── services.js            # Capa de servicios
+├── package.json               # Dependencias y scripts de ejecución
+├── server.js                  # Punto de entrada principal del servidor Express
+├── vercel.json                # Configuración de despliegue en Vercel
+└── vite.config.js             # Configuración de empaquetado multi-entry de Vite
 ```
 
 ---
 
-## 5. Instrucciones de Ejecución
+## 🎯 Historias de Usuario Implementadas (HU-1 a HU-7)
 
-### 5.1 Ejecutar Aplicación Web (Frontend)
+| HU | Módulo / Historia | Descripción y Funcionalidades Clave |
+|---|---|---|
+| **HU-1** | **Directorio y Ficha de Club** | Búsqueda por nombre y palabras clave, filtrado por categorías (Académico, Deportes, Arte y Cultura, Tecnología, etc.), etiquetas y modalidad. Ficha completa del club con banner, directiva, requisitos, redes sociales y cartelera de actividades programadas. |
+| **HU-2** | **Solicitud de Membresía e Inscripción** | Modal de postulación para estudiantes autenticados, registro de motivación y carrera, validación automática de cupos disponibles y estado de solicitud en tiempo real (*Pendiente*, *Aprobada*, *Rechazada*). |
+| **HU-3** | **Cartelera y Registro a Actividades** | Cartelera pública con filtrado por fecha, club organizador y modalidad (Presencial/Virtual). Detalle del evento con ubicación, ponentes, cupos restantes e inscripción con un solo clic. |
+| **HU-4** | **Gestión de Miembros por Directiva** | Bandeja de postulaciones del club con acciones para aprobar o rechazar postulantes. Directorio de miembros activos del club con asignación de roles directivos y visualización de datos de contacto. |
+| **HU-5** | **Gestión de Actividades y Asistencia** | Creación y edición de eventos del club con validación de fechas y aforo. Módulo de control de asistencia de participantes registrados con actualización en tiempo real y descarga de lista. |
+| **HU-6** | **Portal del Estudiante** | Panel personal del alumno que muestra los clubes a los que pertenece, el estado de sus postulaciones pendientes, las actividades en las que está inscrito y la edición de sus datos de perfil. |
+| **HU-7** | **Panel de Administración General** | Auditoría y control de todos los clubes del sistema, bandeja de aprobación de solicitudes de creación de nuevos clubes, directorio y auditoría de usuarios, y panel de métricas y estadísticas clave. |
+
+---
+
+## 👥 Credenciales Demo para Pruebas
+
+Para facilitar la evaluación de los distintos roles y permisos de la plataforma, se incluyen las siguientes cuentas de prueba:
+
+| Rol | Correo Electrónico | Contraseña | Acceso Directo |
+|---|---|---|---|
+| **Visitante / Público** | *(Sin credenciales requeridas)* | — | `http://localhost:3000/` |
+| **Estudiante** | `estudiante@ulima.edu.pe` | `password123` | `http://localhost:3000/estudiante/clubes` |
+| **Directiva de Club** | `directiva@ulima.edu.pe` | `password123` | `http://localhost:3000/directiva/solicitudes` |
+| **Administrador** | `admin@ulima.edu.pe` | `password123` | `http://localhost:3000/admin/dashboard` |
+
+> 💡 **Selector de Rol Rápido:** En la barra superior de la aplicación se encuentra disponible un selector de roles para alternar instantáneamente entre perfiles durante la revisión y evaluación.
+
+---
+
+## 🛠️ Instalación y Puesta en Marcha
+
+### Prerrequisitos
+- **Node.js** (versión 18 o superior recomendada)
+- **npm** (versión 9 o superior)
+
+### 1. Clonar el repositorio e instalar dependencias
 ```bash
-cd frontend
-npm run dev
+git clone https://github.com/Rasxtt/PrograWeb.git
+cd PrograWeb
+npm install
 ```
-La aplicación iniciará en `http://localhost:5173`.
 
-### 5.2 Compilar para Producción
+### 2. Compilar los paquetes de frontend (Vite)
+Compila los 4 puntos de entrada (`web.js`, `student.js`, `directive.js`, `admin.js`) y las hojas de estilo:
 ```bash
-# Desde la raíz del repositorio:
 npm run build
 ```
 
-### 5.3 Ejecutar Servidor Backend REST (Opcional)
+### 3. Iniciar el servidor
 ```bash
-cd backend
+npm start
+```
+El servidor se iniciará en `http://localhost:3000`.
+
+### 4. Modo de desarrollo (Hot Reload)
+Para trabajar con recarga automática y compilación reactiva con Chokidar y Nodemon:
+```bash
 npm run dev
 ```
-El servidor REST iniciará en `http://localhost:4000/api`.
 
 ---
 
-## 6. Verificación de Flujos de Prueba Recomendados
+## 🌐 Rutas Principales del Sistema
 
-1. **Flujo de Postulación a un Club**:
-   - Inicia sesión como **Camila** (o usa el switcher flotante).
-   - Ve a **Directorio**, busca *"Club de Robótica Ulima"* y haz clic en **Postular**.
-   - Responde las preguntas de postulación y envía.
-   - Cambia a **Lucía (Directiva)** desde el switcher.
-   - Entra a **Gestión de mi club** -> pestaña **Solicitudes (3)**.
-   - Visualiza las respuestas del postulante y haz clic en **Aceptar**.
-2. **Flujo de Inscripción y Lista de Espera**:
-   - En **Cartelera**, busca la actividad *"Hackathon de IA y Robótica"* (que tiene cupos completos: 30/30).
-   - Haz clic en **Unirme a Lista de Espera**.
-   - Revisa la vista **Mis Inscripciones** para ver el estado de prioridad.
-3. **Flujo de Asistencia y Exportación a CSV**:
-   - Como **Lucía (Directiva)**, ve a **Gestión de Club** -> **Actividades** -> **Asistencia** en el *"Taller Práctico de Robots Sumo"*.
-   - Marca asistencias (*Presente*, *Tardanza*, *Ausente*).
-   - Presiona **"Exportar Asistencia a CSV"** y verifica la descarga del archivo `.csv`.
-4. **Flujo de Moderación de Bienestar Estudiantil**:
-   - Cambia a **Bienestar Estudiantil (Admin)** desde el switcher flotante.
-   - Revisa las métricas y gráficos en el **Tablero**.
-   - En **Clubes**, aprueba la solicitud de *"Game Dev & eSports Club"* que se encuentra en estado *En Revisión*.
-   - En **Usuarios**, observa la cuenta sancionada de *Carlos Morales* o suspende preventivamente a un usuario con su respectiva justificación.
-# PrograWeb
+### Rutas Públicas
+- `/` - Página de inicio / Hero de Vida Universitaria
+- `/clubes` - Directorio y búsqueda de clubes estudiantiles
+- `/clubes/:id` - Ficha informativa detallada del club
+- `/actividades` - Cartelera general de eventos y actividades
+- `/actividades/:id` - Detalle e inscripción a una actividad
+- `/registro-club` - Formulario de solicitud de creación de un nuevo club
+- `/login` - Inicio de sesión
+- `/registro` - Registro de nuevos estudiantes
+
+### Rutas de Estudiante (`/estudiante/*`)
+- `/estudiante/clubes` - Mis clubes y solicitudes de membresía
+- `/estudiante/actividades` - Mis inscripciones a eventos y talleres
+- `/estudiante/perfil` - Mi perfil de estudiante
+
+### Rutas de Directiva (`/directiva/*`)
+- `/directiva/solicitudes` - Bandeja de solicitudes de postulación al club
+- `/directiva/miembros` - Lista y gestión de miembros activos del club
+- `/directiva/actividades` - Creación y administración de actividades del club
+- `/directiva/asistencia` - Registro y control de asistencia a eventos
+
+### Rutas de Administración (`/admin/*`)
+- `/admin/dashboard` - Métricas generales y resumen del sistema
+- `/admin/clubes` - Auditoría y estado de clubes y nuevas solicitudes
+- `/admin/usuarios` - Directorio de usuarios y gestión de roles
+- `/admin/reportes` - Reportes y analíticas del campus
